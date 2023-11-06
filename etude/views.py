@@ -59,6 +59,20 @@ def login(request):
 
     return render(request, 'login.html', context={"message":message})
 
+def logout(request):
+    request.session['fname'] = None
+    request.session['lname'] = None
+    request.session['mail'] = None
+    return redirect('login')
+
+
+def page(request):
+    return render(request, 'page.html')
+
+def creer_livres(request):
+    return render(request, 'creer_livres.html')
+
+
 
 
 
